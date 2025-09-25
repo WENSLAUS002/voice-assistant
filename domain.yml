@@ -1,0 +1,77 @@
+version: "3.1"
+intents:
+  - greet
+  - goodbye
+  - ask_help
+  - fallback
+  - account_balance
+  - password_reset
+  - international_transfer
+  - working_hours
+  - opening_savings_account
+  - scheduled_transfer
+entities:
+  - amount
+  - account_type
+  - recipient
+  - date
+slots:
+  amount:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: amount
+  account_type:
+    type: categorical
+    values:
+      - savings
+      - checking
+    mappings:
+      - type: from_entity
+        entity: account_type
+  recipient:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: recipient
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to your banking assistant. How can I help you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_ask_help:
+    - text: "I can assist with checking balances, transfers, password resets, and more. What do you need help with?"
+  utter_fallback:
+    - text: "Sorry, I didn’t understand. Could you please rephrase?"
+  utter_account_balance:
+    - text: "Please specify the account type (savings or checking) to check your balance."
+  utter_password_reset:
+    - text: "I can help reset your password. Please confirm your identity."
+  utter_international_transfer:
+    - text: "To make an international transfer, please provide the amount, recipient, and date."
+  utter_working_hours:
+    - text: "Our branches are open from 9 AM to 5 PM, Monday to Friday."
+  utter_opening_savings_account:
+    - text: "To open a savings account, please provide your initial deposit amount and ID details."
+  utter_scheduled_transfer:
+    - text: "Let’s set up a scheduled transfer. Please provide the amount, recipient, and schedule."
+  utter_ask_amount:
+    - text: "How much would you like to transfer or deposit?"
+  utter_ask_recipient:
+    - text: "Who is the recipient of the transfer?"
+  utter_ask_date:
+    - text: "When would you like the transfer to occur?"
+  utter_transfer_complete:
+    - text: "Transfer completed successfully!"
+actions: []
+forms:
+  transfer_form:
+    required_slots:
+      - amount
+      - recipient
+      - date

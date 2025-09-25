@@ -1,0 +1,54 @@
+# Flask and Backend Framework
+flask
+flask-cors
+
+# Speech Processing
+speechrecognition
+pydub
+pyttsx3
+
+# NLP Libraries
+rasa
+spacy
+transformers  # For BERT, GPT, and T5
+sentence-transformers  # SBERT
+openai  # GPT integration
+torch
+nltk
+
+# T5 Model
+tensorflow  # If using TensorFlow-based T5
+torch  # If using PyTorch-based T5
+sentencepiece  # Required for T5 tokenization
+
+# Database Libraries
+pymongo  # MongoDB
+psycopg2  # PostgreSQL
+sqlalchemy  # ORM for PostgreSQL
+
+# Other Dependencies
+requests
+numpy
+scipy
+
+transformers>=4.47.0
+torch
+datasets
+sentence-transformers
+pandas
+scikit-learn
+rasa==3.6.21
+rasa-sdk==3.6.2
+sqlalchemy<2.0
+rasa==3.6.21
+rasa-sdk==3.6.2
+sqlalchemy<2.0
+transformers>=4.47.0
+torch
+datasets
+sentence-transformers
+pandas
+scikit-learn
+torch
+setuptools==70.3.0
+tensorflow<2.16
